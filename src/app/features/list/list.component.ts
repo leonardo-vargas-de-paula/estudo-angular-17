@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { Product } from '../../shared/interfaces/product.interface';
+import { CardComponent } from './components/card.component';
 
 @Component({
   selector: 'app-list',
-  imports: [MatCardModule, MatButtonModule],
+  imports: [CardComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
 export class ListComponent {
   httpClient = inject(HttpClient);
-  products: any[] = [];
+  products: Product[] = [];
 
   productsSevice = inject(ProductService);
 
